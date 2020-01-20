@@ -1,0 +1,293 @@
+
+body{
+  margin: 0px 0px;
+}
+
+.container-main{
+  font-size: 15px;
+  color: #ff0000;
+   .left{
+     width: 300px;
+     height: 100vh;
+     background: rgb(71,71,71);
+     color:white;
+     float: left;
+     position: relative;
+     overflow-y: auto;
+     .header{
+       width:100%;
+       height: 50px;
+       max-height: 50px;
+       color:white;
+       font-size:20px;
+       border-bottom: 1px solid rgba(0,0,0,0.1);
+
+       .projectName{
+         height: inherit;
+         margin-left:10px;
+         line-height: 50px;
+         cursor: pointer;
+         float: left;
+         font-size: 30px;
+       }
+     }
+     .user{
+       width: 100%;
+       text-align: center;
+       display: inline-block;
+
+       .avator{
+         margin-top:30px;
+         width:80px;
+         height: 80px;
+         -webkit-border-radius:40px;
+         -moz-border-radius:40px;
+         border-radius:40px;
+         border:1px solid white;
+         box-sizing: border-box;
+         background: url("https://ws2.sinaimg.cn/large/006tNbRwly1fokw04d5xjj302s02swed.jpg");
+       }
+       .nickName{
+         margin-top:10px;
+         font-size:17px;
+       }
+       .motto{
+         font-size:14px;
+         color: rgba(245,245,245,1);
+       }
+       .btn-follow{
+         width: 80px;
+         height: 36px;
+         background-color: green;
+         border-radius: 18px;
+         line-height: 36px;
+         padding: 0px 0px;
+         display: block;
+         margin: auto;
+         margin-top: 20px;
+       }
+
+       .cancle-follow{
+         width: 80px;
+         height: 36px;
+         background-color: rgb(200,200,200);
+         border-radius: 18px;
+         line-height: 36px;
+         margin: auto;
+         padding: 0px 0px;
+         display: block;
+         margin-top: 20px;
+       }
+
+     }
+     .classify-list{
+       margin-top:30px;
+       margin-bottom: 30px;
+       width:100%;
+       display: flex;
+       flex-direction:column;
+       overflow-y: auto;
+       overflow-x: hidden;
+
+       .classify{
+         margin-left:10px;
+         margin-right: 10px;
+         text-align: left;
+         height: 30px;
+         line-height:30px;
+         color: rgb(150,150,150);
+
+         .item{
+           display: flex;
+           align-items: center;
+           cursor: pointer;
+           .icon{
+             width: 20px;
+             height: 20px;
+           }
+           a{
+             color: rgb(150,150,150);
+             text-decoration: none;
+             margin-left:5px;
+           }
+           a:hover{
+             color:rgb(250,250,250)
+           }
+           .selected{
+             margin-left:5px;
+             text-align: left;
+             height: 30px;
+             line-height:30px;
+             color: white;
+           }
+         }
+       }
+       .article-title-normal{
+         margin-left:35px;
+         font-size: 15px;
+
+         cursor: pointer;
+         transition: all 0.5s;
+         a{
+
+           text-decoration: none;
+           color: rgb(200,200,200);
+         }
+         a:hover{
+           color:rgb(250,250,250)
+         }
+
+        }
+       .article-title-normal:hover{
+         color:rgb(250,250,250)
+       }
+      .article-title-selected{
+         margin-left:35px;
+         color: rgb(255,255,204);
+         cursor: pointer;
+       }
+       .classify:hover{
+         color: white;
+       }
+     }
+   }
+   .right{
+     height: 100vh;
+     max-height: 100vh;
+     margin-left:10px;
+     margin-right:10px;
+     overflow-y: auto;
+     overflow-x: hidden;
+     margin:auto auto;
+     .header{
+       color:rgb(100,100,100);
+       margin-left:20px;
+       height: 50px;
+       line-height:50px;
+     }
+
+     .markdown{
+       margin-left: 20px;
+       text-align: left;
+       color: rgb(51,51,51);
+       max-width: 800px;
+       min-width: 600px;
+     }
+     .comment-container{
+       width:100%;
+       display: flex;
+       flex-direction: column;
+       margin-bottom: 30px;
+       align-items: center;
+       .reward{
+         background-color: red;
+         width:80px;
+         height: 80px;
+         border-radius: 40px;
+         color: white;
+         line-height: 80px;
+         text-align: center;
+         cursor: pointer;
+         position: relative;
+         .qr{
+           top: 80px;
+           width:200px;
+           position: absolute;
+           left: calc(-60px);
+           opacity: 0;
+           animation: 1s both show ease;
+         }
+         @keyframes show {
+           form{opacity: 0;width: 10px}
+           to{opacity: 1;width: 200px}
+         }
+       }
+       .header{
+         width:100%;
+         height: 50px;
+         font-size: 20px;
+         text-align: center;
+       }
+       .comment-input{
+         height: 100px;
+         margin: 10px 10px;
+         width:90%;
+         border:4px solid rgb(250,250,250);
+       }
+       .btn-comment{
+         align-self: flex-start;
+         margin-left: 10px;
+         margin-top: 20px;
+         background: rgba(0,165,252,1);
+         color:white;
+         width:80px;
+         height: 36px;
+         line-height: 36px;
+         border-radius: 5px;
+         text-align: center;
+         cursor: pointer;
+       }
+
+       .btn-comment:hover{
+         background: rgba(0,165,252,0.6);
+       }
+       .comment-list{
+         margin-top:30px;
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+
+         .item{
+           width:95%;
+           background-color: rgba(240,240,240,1);
+           border-radius: 5px;
+           margin-bottom: 10px;
+
+            .top{
+              display: flex;
+              width: 100%;
+
+              max-height: 50px;
+              align-items: center;
+
+              .avator{
+                margin-left:10px;
+                margin-top: 10px;
+                width: 40px;
+                height: 40px;
+                border-radius: 20px;
+                background-color: #c8c8c8;
+              }
+              .profile{
+                margin-left:10px;
+                display: flex;
+                flex-direction: column;
+                width:100%;
+                .name{
+                  margin-top: 10px;
+                  color: black;
+                  font-size:15px;
+                }
+                .date{
+                  color:rgb(100,100,100);
+                  font-size:12px;
+                }
+              }
+            }
+            .content{
+              margin-top: 10px;
+              margin-left:55px;
+              margin-bottom: 10px;
+               color: rgb(50,50,50);
+             }
+
+         }
+
+       }
+
+     }
+
+   }
+}
+

@@ -1,0 +1,13 @@
+
+
+.container {
+  font-size: 50px;
+  color: #ff0000;
+}
+　
+.container .left-container {
+  width: 300px;
+  height: 100vh;
+  color: #ff0000;
+  background: red;
+ }

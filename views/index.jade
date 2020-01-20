@@ -1,0 +1,152 @@
+doctype html
+html
+  head(lang="en")
+    title= title
+    script(src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js")
+    script(src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js",integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q",crossorigin="anonymous")
+    script(src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js", integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl",crossorigin="anonymous")
+    link(rel="stylesheet", href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css", integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm",crossorigin="anonymous")
+    meta(http-equiv="Content-Type",content="width=device-width, initial-scale=1, shrink-to-fit=no",name="viewport")
+    link(rel='stylesheet', href='/stylesheets/home.css')
+
+  body
+      div.container-main
+          div.left
+              div.userId(style="display:none")= userInfo.id
+                  div.articleId(style="display:none")= articleId
+              div.header
+                  a.projectName(href="http://www.mingbozhu.com" target="_Blank" style="color:white") 名博主
+               div.user
+                   img.avator(src=userInfo.avatorUrl)
+                   div.nickName= userInfo.name
+                   div.motto= userInfo.motto
+                   if !isFollow&&isLogin
+                        div.btn-follow 关注
+                   else if isLogin
+                        div.cancle-follow 已关注
+               div.classify-list
+                   each value, index in cassifyList
+                       div.classify
+                           if value.id==classifyId
+                               div.item
+                                    img.icon(src="http://upload-images.jianshu.io/upload_images/1594482-e88b3d4c3579e1d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240")
+                                    div.selected= value.name + "(" + value.articleCount + ")"
+                           else
+                               div.item
+                                    img.icon(src="http://upload-images.jianshu.io/upload_images/1594482-e88b3d4c3579e1d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240")
+                                    a(href=url+"/blog/"+userInfo.id+"?classifyId="+value.id)= value.name + "(" + value.articleCount + ")"
+                       if value.id==classifyId
+                           each value,index in articleList
+                               if value.id == articleId
+                                    div.article-title-selected= value.title
+                               else
+                                    div.article-title-normal
+                                      a(href=url+"/blog/"+userInfo.id+"?classifyId="+classifyId+"&articleId="+value.id)= value.title
+
+          div.right
+              div.header= "阅读量" + article.readCount + "次"
+              div.markdown!= markdown(article.md)
+              div.comment-container
+                  if userInfo.showReward
+                        div.reward 赞赏
+                            img.qr(src=userInfo.wxQRSrc)
+                  //if userInfo.showComment
+                  //   div.header 提问专区
+                  //   textarea.comment-input
+                  //   div.btn-comment 发布
+                  //   div.comment-list
+                  //     each value,index in comments
+                  //        div.item
+                  //           div.top
+                  //              img.avator(src=value.avatorUrl)
+                  //              div.profile
+                  //                  div.name= value.name
+                  //                  div.date= value.createdAt
+                  //           div.content= value.content
+
+script(type='text/javascript').
+    $(document).ready(function(){
+        var userId = $(".userId").html()
+        var articleId = $(".articleId").html()
+        function getQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+
+        var token = getQueryString("token")
+        if(token != null){
+            localStorage.setItem("token",token)
+        }
+
+        /*隐藏赞赏码*/
+        $(".qr").hide()
+       var offset = $(".article-title-selected").offset().top
+       $(".left").animate({
+           scrollTop:offset-200
+       },0)
+
+        /*关注按钮*/
+      $(".btn-follow").click(function(){
+          var token = localStorage.getItem("token")
+          $.post("/blog/follow",
+              {
+                  token: token,
+                  userId:userId
+              },
+              function (data, status) {
+                  $(".btn-follow").show();
+              });
+      });
+
+      /*取消关注*/
+      $(".cancle-follow").click(function(){
+
+      })
+
+        $(".reward").click(function(){
+            if($(".qr").css('display')=='none'){
+                $(".qr").show()
+            }else{
+                $(".qr").hide()
+            }
+        })
+
+
+      /*发表评论*/
+       $(".btn-comment").click(function(){
+           var text = $(".comment-input").val()
+
+           $.post("/blog/follow",
+               {
+                   token: token,
+                   content: text,
+                   articleId:articleId
+               },
+               function (data, status) {
+
+               });
+       })
+
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
