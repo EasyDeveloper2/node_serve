@@ -29,7 +29,7 @@
     "prismjs": "^1.10.0",
     "pygmentize-bundled": "^2.3.0",
     "qiniu": "^7.1.2",
-    "sequelize": "^4.32.6",
+    "sequelize": "^5.15.1",
     "serve-favicon": "~2.4.5"
   }
 }
