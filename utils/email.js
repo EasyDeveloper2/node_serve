@@ -23,7 +23,6 @@ module.exports = {
             // html: `<h3>欢迎注册ITC</h3><h4>
             // 你的验证码为:<div style="color:red">${content}<div></h4>`
         };
-
         transporter.sendMail(mailOptions, function (err, info) {
             res(err,info);
         });

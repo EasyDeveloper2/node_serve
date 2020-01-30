@@ -3,9 +3,10 @@
  */
 
 const Sequelize = require('sequelize');
+const config = require('../config/config');
 
-const sequelize = new Sequelize('bdm260603158_db', 'bdm260603158', 'xujie19910128', {
-    host: 'bdm260603158.my3w.com',
+const sequelize = new Sequelize(config.dbName, config.dbUsername, config.dbPassword, {
+    host: config.dbHost,
     dialect: 'mysql',
     dialectOptions: {
         charset: 'utf8'
