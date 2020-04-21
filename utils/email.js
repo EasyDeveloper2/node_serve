@@ -6,8 +6,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: 'qq',
     auth: {
-        user: '2461556682@qq.com',
-        pass: 'uslkhcrmobclebhd' //授权码,通过QQ获取
+        user: '246155',
+        pass: 'uslkh' //授权码,通过QQ获取
     }
 });
 
@@ -16,7 +16,7 @@ var transporter = nodemailer.createTransport({
 module.exports = {
     send(email,content,res){
         var mailOptions = {
-            from: '2461556682@qq.com', // 发送者
+            from: '', // 发送者
             to: email, // 接受者,可以同时发送多个,以逗号隔开
             subject: 'ITC', // 标题
             text: '欢迎注册ITC,请填写验证码:'+content, // 文本

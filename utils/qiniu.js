@@ -6,8 +6,8 @@
 const qiniu = require("qiniu");
 const tools = require("./tools");
 //需要填写你的 Access Key 和 Secret Key
-qiniu.conf.ACCESS_KEY = '6I01Qid727OSJVAYI1_ZjB_cvZRh9427Ai3gA';
-qiniu.conf.SECRET_KEY = 'D5g1ZwJaZMxVR1Hu0owhINLpaVfCPXFOihikP';
+qiniu.conf.ACCESS_KEY = '6I01Qid727OSJVAYI1_ZjB_';
+qiniu.conf.SECRET_KEY = 'D5g1ZwJaZMxVR1Hu0owhINLp';
 qiniu.conf.zone = qiniu.zone.Zone_z2;
 //要上传的空间
 const bucket = 'mingbozhu';

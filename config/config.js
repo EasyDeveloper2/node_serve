@@ -8,11 +8,11 @@ module.exports = {
     adminUsername:"xujie",
     adminPassword:"xujie",
     /** 数据库名称*/
-    dbName:'bdm260603158_db', 
+    dbName:'bdm', 
     /** 数据库用户名*/
-    dbUsername:'bdm260603158',     
+    dbUsername:'bdm',     
     /** 数据库密码*/
-    dbPassword:'xujie19910128', 
+    dbPassword:'xujie', 
     /** 数据库地址*/
-    dbHost:'bdm260603158.my3w.com',
+    dbHost:'bdm',
 }
