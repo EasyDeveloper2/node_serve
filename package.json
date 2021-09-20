@@ -26,7 +26,7 @@
     "nodemailer": "^4.4.2",
     "pg": "^6.4.2",
     "pg-hstore": "^2.3.2",
-    "prismjs": "^1.10.0",
+    "prismjs": "^1.25.0",
     "pygmentize-bundled": "^2.3.0",
     "qiniu": "^7.1.2",
     "sequelize": "^4.32.6",
