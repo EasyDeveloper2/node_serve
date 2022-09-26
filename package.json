@@ -15,7 +15,7 @@
     "express": "~4.15.5",
     "express-myconnection": "^1.0.4",
     "jade": "~1.11.0",
-    "log4js": "^2.5.3",
+    "log4js": "^6.6.1",
     "markdown": "^0.5.0",
     "markdown-it": "^8.4.1",
     "marked": "^0.3.12",
