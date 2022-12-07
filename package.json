@@ -12,7 +12,7 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "entities": "^1.1.1",
-    "express": "~4.15.5",
+    "express": "~4.17.3",
     "express-myconnection": "^1.0.4",
     "jade": "~1.11.0",
     "log4js": "^2.5.3",
